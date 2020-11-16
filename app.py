@@ -7,8 +7,14 @@ ranker = Ranker()
 recommender = Recommender()
 
 
+@app.route('/')
+def hello_world():
+    return 'hello test'
+
+
 @app.route('/test', methods=["GET"])
 def test():
+    print('test')
     return 'Container is running', 200
 
 
@@ -47,4 +53,4 @@ def rec_pub():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(port=5000, debug=True)
