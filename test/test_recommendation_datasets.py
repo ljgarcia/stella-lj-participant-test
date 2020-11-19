@@ -3,7 +3,7 @@ import requests
 import docker
 import json
 
-IP = '127.0.0.1'
+IP = 'localhost'
 PORT = '5000'
 img_tag = 'test-img'
 container_name = 'test-container'
