@@ -7,11 +7,6 @@ ranker = Ranker()
 recommender = Recommender()
 
 
-@app.route('/')
-def hello_world():
-    return 'hello test'
-
-
 @app.route('/test', methods=["GET"])
 def test():
     print('test')
