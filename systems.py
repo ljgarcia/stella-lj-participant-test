@@ -1,17 +1,22 @@
 import jsonlines
 import random
 
+
 class Ranker(object):
 
     def __init__(self):
         self.idx = None
 
     def index(self):
-        pass
+        self.idx = []
+        with jsonlines.open('./data/livivo/documents/livivo_testset.jsonl') as reader:
+            for obj in reader:
+                self.idx.append(obj['DBRECORDID'])
+
 
     def rank_publications(self, query, page, rpp):
 
-        itemlist = []
+        itemlist = random.choices(self.idx, k=rpp)
 
         return {
             'page': page,
